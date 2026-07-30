@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>方向 A - 透明地层剖切</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#e9ece8;color:#17201d;font-family:"Microsoft YaHei","Noto Sans SC",sans-serif;letter-spacing:0}
+    .stage{position:relative;width:100vw;height:100vh;min-width:960px;min-height:540px;background:#e9ece8;isolation:isolate}
+    .grain{position:absolute;inset:0;opacity:.22;background-image:linear-gradient(rgba(21,44,36,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(21,44,36,.06) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,#000 0%,transparent 78%)}
+    header{position:absolute;left:4.6vw;right:4.6vw;top:4.3vh;display:flex;align-items:flex-start;justify-content:space-between;z-index:8}
+    .kicker{font-size:14px;font-weight:700;color:#d85d32;margin-bottom:12px}.title{font-size:clamp(28px,3vw,58px);font-weight:800;line-height:1.06}.sub{margin-top:12px;font-size:clamp(13px,1.1vw,21px);color:#53615c}
+    .step{display:flex;gap:10px;align-items:center;font-size:15px;color:#52615b}.step b{font-size:32px;color:#1e332b}.step span{width:116px;height:3px;background:#c9cfcc;position:relative}.step span:after{content:"";position:absolute;left:0;top:0;width:72%;height:100%;background:#d85d32}
+    .viewport{position:absolute;left:4.6vw;right:4.6vw;top:24vh;bottom:12vh;perspective:1500px}
+    .model{position:absolute;inset:0;transform:rotateX(7deg) rotateY(-8deg);transform-style:preserve-3d}
+    .evidence{position:absolute;left:4%;top:4%;width:30%;height:30%;border:1px solid rgba(22,38,32,.16);background:#121917 url("assets/report-media/image7.png") center/cover no-repeat;box-shadow:0 16px 40px rgba(34,48,43,.16);overflow:hidden}
+    .evidence:after{content:"报告模型 · 原始地表";position:absolute;left:14px;bottom:12px;color:#fff;font-size:13px;background:rgba(10,15,13,.72);padding:7px 10px}
+    .cutaway{position:absolute;left:25%;right:4%;top:6%;bottom:0;filter:drop-shadow(0 28px 26px rgba(30,39,35,.18))}
+    .cutaway svg{width:100%;height:100%;overflow:visible}
+    .surface{fill:#728f80;stroke:#314d40;stroke-width:3}.soil{fill:#b86c43;stroke:#7f4529;stroke-width:2}.rock{fill:#777e7c;stroke:#434a48;stroke-width:2}.design{fill:none;stroke:#f6a21a;stroke-width:8;stroke-linecap:round;stroke-dasharray:20 10}.excavation{fill:#e96d3c;fill-opacity:.88;stroke:#b8401b;stroke-width:3}.gridline{stroke:#fff;stroke-opacity:.2;stroke-width:1}
+    .label{position:absolute;z-index:4;font-size:14px;font-weight:700;color:#273b33;background:rgba(249,250,247,.9);border:1px solid rgba(25,50,40,.16);padding:9px 12px;box-shadow:0 8px 20px rgba(29,45,38,.08)}
+    .label:before{content:"";position:absolute;right:100%;top:50%;width:46px;height:1px;background:#40564d}.l1{right:1%;top:17%}.l2{right:0;top:43%;color:#b84925}.l3{right:2%;top:65%}.formula{position:absolute;left:3%;bottom:5%;width:26%;font-size:clamp(15px,1.4vw,26px);line-height:1.45}.formula strong{display:block;margin-top:8px;font-size:clamp(21px,2vw,38px);color:#d85d32}.formula small{display:block;margin-top:9px;color:#63706b;font-size:13px}
+    footer{position:absolute;left:4.6vw;right:4.6vw;bottom:3.5vh;display:flex;justify-content:space-between;align-items:center;color:#5e6b66;font-size:13px}.palette{display:flex;gap:7px}.sw{width:38px;height:7px}.mood{font-weight:700;color:#273a33}
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <div class="grain"></div>
+    <header><div><div class="kicker">方向 A · 透明地层剖切</div><div class="title">看见每一立方米<br>是怎样被切出来的</div><div class="sub">把总挖方定义为一个可观察、可解释的封闭空间</div></div><div class="step"><b>03</b><span></span><em>形成开挖体</em></div></header>
+    <section class="viewport">
+      <div class="model">
+        <div class="evidence"></div>
+        <div class="formula">原始地表 − 设计开挖面<strong>= 封闭开挖体</strong><small>镜头随后沿基岩顶面分离土体与岩体</small></div>
+        <div class="cutaway">
+          <svg viewBox="0 0 1000 620" role="img" aria-label="原地表、设计开挖面、基岩顶面与开挖包络体剖切示意">
+            <defs><linearGradient id="soilG" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ca8157"/><stop offset="1" stop-color="#9f5838"/></linearGradient><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" class="gridline" fill="none"/></pattern></defs>
+            <path class="rock" d="M80 286 C210 230 280 326 390 274 C510 216 600 344 726 260 C820 198 902 260 950 236 L950 560 L80 560Z"/>
+            <path class="soil" fill="url(#soilG)" d="M80 130 C190 92 280 170 392 115 C532 46 610 186 738 102 C828 44 905 105 950 80 L950 236 C902 260 820 198 726 260 C600 344 510 216 390 274 C280 326 210 230 80 286Z"/>
+            <path class="surface" d="M80 130 C190 92 280 170 392 115 C532 46 610 186 738 102 C828 44 905 105 950 80 L950 109 C900 132 824 76 742 128 C612 210 535 78 398 142 C280 196 190 124 80 161Z"/>
+            <path class="excavation" d="M118 150 C220 128 286 184 390 144 C510 98 600 198 724 142 C820 100 880 135 926 122 L926 210 C830 196 778 218 708 232 C595 256 500 194 394 230 C280 268 206 214 118 235Z"/>
+            <path class="design" d="M118 235 C206 214 280 268 394 230 C500 194 595 256 708 232 C778 218 830 196 926 210"/>
+            <path d="M80 286 C210 230 280 326 390 274 C510 216 600 344 726 260 C820 198 902 260 950 236" fill="none" stroke="#d5ded9" stroke-width="5" stroke-dasharray="13 9"/>
+            <path d="M80 286 C210 230 280 326 390 274 C510 216 600 344 726 260 C820 198 902 260 950 236 L950 560 L80 560Z" fill="url(#grid)" opacity=".38"/>
+          </svg>
+          <div class="label l1">原始地表</div><div class="label l2">设计开挖面</div><div class="label l3">基岩顶面</div>
+        </div>
+      </div>
+    </section>
+    <footer><span class="mood">气质：工程剖面模型 · 可信、清楚、适合逐步讲解</span><div class="palette"><i class="sw" style="background:#728f80"></i><i class="sw" style="background:#b86c43"></i><i class="sw" style="background:#777e7c"></i><i class="sw" style="background:#f6a21a"></i></div><span>参照：地质博物馆剖面模型 × 工程审查图</span></footer>
+  </main>
+</body>
+</html>

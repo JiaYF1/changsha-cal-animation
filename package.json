@@ -1,0 +1,18 @@
+{
+  "name": "changsha-airport-calculation-animation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate-data": "D:/anaconda/INSTALL/envs/worktools/python.exe scripts/generate_airport_grid.py",
+    "build": "esbuild src/app.js --bundle --minify --format=iife --outfile=dist/app.min.js",
+    "check": "node scripts/check-build.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.9",
+    "playwright-core": "1.54.2"
+  }
+}
