@@ -37,14 +37,6 @@ jobs:
       - name: Build animation
         run: npm run build
 
-      - name: Prepare static site
-        shell: bash
-        run: |
-          mkdir -p _site/dist
-          cp index.html _site/index.html
-          cp dist/app.min.js _site/dist/app.min.js
-          touch _site/.nojekyll
-
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 

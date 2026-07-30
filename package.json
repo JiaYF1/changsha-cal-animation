@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "generate-data": "D:/anaconda/INSTALL/envs/worktools/python.exe scripts/generate_airport_grid.py",
-    "build": "esbuild src/app.js --bundle --minify --format=iife --outfile=dist/app.min.js",
+    "build": "esbuild src/app.js --bundle --minify --format=iife --outfile=dist/app.min.js && node scripts/prepare-site.mjs",
     "check": "node scripts/check-build.mjs"
   },
   "dependencies": {
